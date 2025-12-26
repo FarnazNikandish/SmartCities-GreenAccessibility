@@ -1,42 +1,44 @@
-# SmartCities-GreenAccessibility
-GIS-based analysis of green accessibility in Toronto neighbourhoods
-# Green Accessibility Analysis – Toronto Smart Cities Project
+# Green Accessibility Analysis – Toronto
 
-This project evaluates green space accessibility across Toronto neighbourhoods using GIS techniques.
-It computes Green Buffer Coverage (GBC), defined as the percentage of each neighbourhood located
-within 300m, 500m, and 800m of public greenspaces.
+This project examines neighbourhood-level access to public green spaces in Toronto using GIS-based spatial analysis. The goal is to quantify variations in green accessibility, identify areas with lower access, and visualize spatial patterns that may be relevant for urban planning and policy discussions.
 
 ## Objectives
-- Measure spatial equity in green space distribution
-- Identify underserved neighbourhoods
-- Visualize accessibility patterns using geospatial analysis
+- Measure green space accessibility across Toronto neighbourhoods  
+- Identify neighbourhoods with relatively low access to public greenspaces  
+- Explore spatial differences using GIS-based indicators and maps  
 
 ## Data Sources
-- Toronto Neighbourhood Boundaries (GeoJSON)
-- Toronto Greenspaces (GeoJSON)
+- Toronto Neighbourhood Boundaries (GeoJSON)  
+- Toronto Public Greenspaces (GeoJSON)  
 
-## Methods
-- Geopandas spatial operations
-- Buffer analysis (300m / 500m / 800m)
-- Intersection area measurement
-- Choropleth map visualization
+## Methodology
+The analysis is conducted using GeoPandas and includes the following steps:
 
-## Outputs
-- Accessibility index table (CSV)
-- Choropleth maps
-
-## Tools
-- Python
-- GeoPandas
-- Matplotlib
-- Jupyter Notebook
+- Coordinate reference system (CRS) transformation to a metric projection for accurate distance and area calculations  
+- Calculation of neighbourhood areas and total green space area within each neighbourhood using spatial joins  
+- Distance-based accessibility analysis using neighbourhood centroids and nearest green space distance  
+- Construction of a Green Access Index (GAI), combining green space area ratio and distance to the nearest green space  
+- Buffer-based analysis using a 300-meter green space buffer to calculate Green Buffer Coverage (GBC_300), defined as the percentage of each neighbourhood located within walkable distance of greenspaces  
+- Visualization of results using choropleth maps  
 
 ## Results
-Neighbourhoods are ranked based on accessibility levels.  
-Areas with low GBC are identified as priority zones for urban planning improvements.
+The results show notable variation in green space accessibility across Toronto neighbourhoods. Several neighbourhoods exhibit relatively low Green Access Index values and low buffer coverage, suggesting potential gaps in walkable access to greenspaces. These areas may represent priority zones for further investigation or planning-focused interventions.
 
----
+## Outputs
+- Neighbourhood-level accessibility indicators (GAI and GBC_300)  
+- Choropleth maps illustrating spatial patterns of green accessibility  
 
-# Author
-Farnaz Nikandish  
-Urban Planning & GIS Research
+## Tools
+- Python  
+- GeoPandas  
+- Pandas  
+- Matplotlib  
+- Jupyter Notebook  
+
+## Future Work
+Potential extensions of this analysis include:
+- Expanding the buffer analysis to additional distances (e.g., 500m, 800m)  
+- Integrating socio-economic or demographic data  
+- Applying spatial statistical methods to further examine accessibility patterns  
+
+
